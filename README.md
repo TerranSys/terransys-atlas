@@ -33,6 +33,7 @@ Follow these steps to clone the repository and install the necessary dependencie
 2. **Install Go dependencies:**
 
    ```bash
+   go mod init terransys-atlas
    go mod tidy
    ```
 
@@ -41,7 +42,7 @@ Follow these steps to clone the repository and install the necessary dependencie
    If this is your first time using Pulumi in this project, Pulumi will automatically download the necessary plugins the first time you run `pulumi up`. However, if you want to install them manually:
 
    ```bash
-   pulumi plugin install aws v5.0.0
+   pulumi plugin install resource aws v5.0.0
    ```
 
 ## Configuration
@@ -61,6 +62,7 @@ Pulumi uses stacks to manage environment-specific configurations (e.g., `dev`, `
    Configure necessary variables, such as the AWS region:
 
    ```bash
+   cd  cmd/atlas
    pulumi config set aws:region us-west-2 --stack dev
    ```
 
